@@ -1,38 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TP4 — Vérification de projets GitHub</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-<body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Vérification de projets GitHub</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TP4 — Vérification de projets GitHub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Vérification de projets GitHub</h1>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <div class="select">
-            <select id="file-selector">
-              <option value="data/TheBody983-starred.json">TheBody983 (5)</option>
-              <option value="data/Webcretaire-starred.json">Webcretaire (40)</option>
-              <option value="data/romulusFR-starred.json">romulusFR (327)</option>
-            </select>
+        <div class="field is-grouped">
+          <div class="control">
+            <div class="select">
+              <select id="file-selector">
+                <option value="data/TheBody983-starred.json">
+                  TheBody983 (5)
+                </option>
+                <option value="data/Webcretaire-starred.json">
+                  Webcretaire (40)
+                </option>
+                <option value="data/romulusFR-starred.json">
+                  romulusFR (327)
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="control">
+            <button id="check-btn" class="button is-primary">Vérifier</button>
           </div>
         </div>
-        <div class="control">
-          <button id="check-btn" class="button is-primary">Vérifier</button>
-        </div>
+ <div class="field">
+  <label class="label" for="token-input">Token GitHub (optionnel)</label>
+  <div class="control">
+    <input id="token-input" class="input" type="password" placeholder="ghp_xxx" />
+  </div>
+</div>
+
+        <progress id="progress" class="progress is-info" value="0" max="100">
+          0%
+        </progress>
+        <p>Compteur : <span id="counter">0 / 0</span></p>
+
+        <div
+          id="rate-limit-warning"
+          class="notification is-warning is-light"
+          style="display: none"
+        ></div>
+        <div id="results" class="columns is-multiline"></div>
       </div>
+    </section>
 
-      <progress id="progress" class="progress is-info" value="0" max="100">0%</progress>
-      <p>Compteur : <span id="counter">0 / 0</span></p>
-
-      <div id="results" class="columns is-multiline"></div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
