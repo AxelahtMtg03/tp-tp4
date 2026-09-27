@@ -2,12 +2,6 @@
 
 Application web qui vérifie si une liste de projets GitHub sont toujours actifs, en interrogeant l'API GitHub.
 
-## Lancer le projet
-
-1. Ouvrir `index.html` dans un navigateur
-2. Choisir un fichier dans la liste
-3. Cliquer sur **Vérifier**
-
 ## Token GitHub
 
 Sans token, l'API GitHub limite à **60 requêtes/heure** → impossible de vérifier 327 projets.
